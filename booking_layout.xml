@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_270sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/white"
+    android:layout_margin="@dimen/_5sdp"
+    app:cardCornerRadius="@dimen/_5sdp"
+    app:cardElevation="@dimen/_10sdp">
+
+    <RelativeLayout
+        android:id="@+id/houseCard"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_280sdp"
+        android:padding="@dimen/_5sdp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_130sdp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="@dimen/_5sdp">
+            
+            
+            <ImageView
+                android:id="@+id/roomPic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/room_pic"/>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/roomDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_view"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:textColor="@color/black"
+            android:text="Mighty Cinco family"
+            android:textSize="@dimen/_14ssp"/>
+
+        <TextView
+            android:id="@+id/roomLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/roomDescription"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:textColor="@color/gray3"
+            android:drawableLeft="@drawable/location_icon"
+            android:drawablePadding="@dimen/_4sdp"
+            android:text="Noida, India"
+            android:textSize="@dimen/_9ssp"/>
+
+        <TextView
+            android:id="@+id/bookingDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/roomLocation"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:textColor="@color/dark_green"
+            android:text="Moved-In: Jan 25,2022"
+            android:textSize="@dimen/_9ssp"/>
+
+        <TextView
+            android:id="@+id/bookingPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/roomLocation"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:textColor="@color/black"
+            android:text="$999/month"
+            android:textSize="@dimen/_9ssp"/>
+
+        <TextView
+            android:id="@+id/moveOutBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bookingPrice"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/red_box"
+            android:textSize="@dimen/_15ssp"
+            android:textColor="@color/white"
+            android:text="Move-Out"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"/>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

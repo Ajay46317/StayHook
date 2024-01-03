@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/intro_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Find Home that Suits You"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="55dp"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieView"
+        android:layout_width="@dimen/_240sdp"
+        android:layout_height="@dimen/_240sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/intro_heading"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:elevation="@dimen/_5sdp"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/search_lottie"/>
+
+
+      <TextView
+          android:id="@+id/intro_cmt"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/lottieView"
+          android:layout_alignStart="@id/lottieView"
+          android:layout_marginStart="1dp"
+          android:layout_marginTop="26dp"
+          android:layout_marginEnd="-1dp"
+          android:gravity="center"
+          android:text="@string/lorem_ipsum"
+          android:textSize="@dimen/_9ssp"
+          android:textColor="@color/black"/>
+
+
+    <TextView
+        android:id="@+id/getStartBtn"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@drawable/rectangle"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="@dimen/_14ssp"
+        android:gravity="center"
+        android:text="@string/get_started"
+        />
+
+</RelativeLayout>

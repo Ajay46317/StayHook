@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".OtpAuthActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_250sdp"
+        android:orientation="vertical"
+        android:background="@drawable/curve_background">
+
+        <ImageView
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/app_name"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_60sdp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verification Code"
+            android:textSize="@dimen/_18sdp"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_16sdp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/verification_code"
+            android:textSize="@dimen/_15sdp"
+            android:textColor="@color/gray1"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_16sdp"/>
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="@dimen/_13sdp"
+            android:textColor="@color/gray1"
+            android:layout_marginLeft="@dimen/_16sdp"/>
+    </LinearLayout>
+
+
+
+
+
+
+    <com.chaos.view.PinView
+        android:id="@+id/pinView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_220sdp"
+        android:layout_marginLeft="@dimen/_26sdp"
+        android:layout_marginRight="@dimen/_30sdp"
+        android:textColor="@color/black"
+        app:itemSpacing="@dimen/_8sdp"
+        android:inputType="number"
+        android:elevation="10dp"
+        app:itemWidth="@dimen/_55sdp"
+        app:itemHeight="@dimen/_55sdp"
+        app:itemRadius="@dimen/_10sdp"
+        android:maxLength="4"
+        android:itemBackground="#d3d3d3"
+        app:lineColor="#d3d3d3"
+        android:textSize="@dimen/_22ssp"
+        app:viewType="rectangle"
+        android:text=""/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Didn't receive any code?"
+        android:layout_below="@+id/pinView"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@color/gray2"
+        android:layout_toLeftOf="@+id/resendCodeBtn"/>
+
+    <TextView
+        android:id="@+id/resendCodeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Resent New Code"
+        android:layout_below="@+id/pinView"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_alignEnd="@+id/pinView"
+        />
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/resendCodeBtn">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/verifyBtn"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginTop="@dimen/_70sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/rectangle"
+                android:text="Verify"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"/>
+            
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

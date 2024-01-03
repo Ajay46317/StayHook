@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".AccountFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_170sdp"
+            android:background="@drawable/curve_background"
+            android:textColor="@color/white"
+            android:text="Account"
+            android:textSize="@dimen/_22ssp"
+            android:gravity="center"/>
+
+<!--        <ImageView-->
+<!--            android:id="@+id/editBtn"-->
+<!--            android:layout_width="22dp"-->
+<!--            android:layout_height="22dp"-->
+<!--            android:layout_alignBottom="@id/userName"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:src="@drawable/edit"-->
+<!--            android:layout_marginRight="@dimen/_30sdp"/>-->
+
+       <de.hdodenhof.circleimageview.CircleImageView
+           android:id="@+id/profileImage"
+           android:layout_width="@dimen/_90sdp"
+           android:layout_height="@dimen/_90sdp"
+           android:layout_marginTop="@dimen/_125sdp"
+           android:layout_centerHorizontal="true"
+           app:civ_border_width="@dimen/_3sdp"
+           app:civ_border_color="@color/blue"
+           android:src="@drawable/profile_image"/>
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profileImage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:text="Ajay Kumar Thakur"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold"/>
+        
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profileBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_below="@+id/userName"
+            app:cardCornerRadius="@dimen/_10sdp"
+            android:elevation="@dimen/_30sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background_gray"
+                android:padding="@dimen/_10sdp">
+
+
+                <TextView
+                    android:id="@+id/textview1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ajay123@gmail.com"
+                    android:textColor="@color/gray1"
+                    android:textSize="@dimen/_11sdp"
+                    android:layout_alignParentRight="true"/>
+
+                <View
+                    android:id="@+id/line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/gray4"
+                    android:layout_below="@id/email"/>
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/line1"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="Location"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/line1"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="Delhi, India"
+                    android:textColor="@color/gray1"
+                    android:textSize="@dimen/_11sdp"
+                    android:layout_alignParentRight="true"/>
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/gray4"
+                    android:layout_below="@id/location"/>
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/line2"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="Phone No."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/phoneNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/line2"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="8558035567"
+                    android:textColor="@color/gray1"
+                    android:textSize="@dimen/_11sdp"
+                    android:layout_alignParentRight="true"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+        
+        
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_12sdp"
+            android:background="@color/white"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_8sdp"
+            android:layout_below="@+id/profileBox">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/CardViewBackground"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/applied"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Applied"
+                    android:paddingTop="@dimen/_4sdp"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/liked"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Liked"
+                    android:layout_weight="1"
+                    android:paddingTop="@dimen/_4sdp"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:gravity="center"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/houseRV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:layout_below="@id/cardView"/>
+
+
+
+    </RelativeLayout>
+
+
+
+
+</ScrollView>

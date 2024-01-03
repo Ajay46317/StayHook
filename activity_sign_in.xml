@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".SignInActivity">
+
+    <ImageView
+        android:id="@+id/app_name"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:src="@drawable/app_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_60sdp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/SignUpBox"
+        android:layout_width="@dimen/_280sdp"
+        android:layout_height="@dimen/_300sdp"
+        android:layout_below="@+id/app_name"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardElevation="@dimen/_10sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_gravity="center_horizontal"
+                android:text="Sign In to Account"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_gravity="center_horizontal"
+                android:text="Sign in to account to continue and enjoy a hassle free and easy stay"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/gray2"
+                android:gravity="center"/>
+
+
+
+            <EditText
+                android:id="@+id/phoneNumber"
+                android:layout_width="@dimen/_240sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/grey_box"
+                android:layout_gravity="center_horizontal"
+                android:drawableLeft="@drawable/baseline_phone_24"
+                android:paddingLeft="@dimen/_5sdp"
+                android:hint="Phone Number"
+                android:textColorHint="@color/gray2"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_11sdp"
+                android:inputType="number"
+                android:maxLines="1"/>
+
+
+            <TextView
+                android:id="@+id/signInBtn"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginTop="@dimen/_50sdp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/rectangle"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="@dimen/_14sdp"
+                android:text="Sign In"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_4sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10sdp"
+        android:text="New to Stayhook?"
+        android:layout_below="@+id/SignUpBox"
+       android:layout_toLeftOf="@+id/SignUpBtn"/>
+
+
+
+    <TextView
+        android:id="@+id/SignUpBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_4sdp"
+        android:textColor="@color/white"
+        android:text="Sign Up Here"
+        android:textSize="@dimen/_10sdp"
+        android:layout_below="@+id/SignUpBox"
+        android:layout_alignEnd="@+id/SignUpBox"/>
+
+
+
+</RelativeLayout>

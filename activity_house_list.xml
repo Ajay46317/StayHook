@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HouseListActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+        <TextView
+            android:id="@+id/typeFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:drawableLeft="@drawable/back"
+            android:drawablePadding="@dimen/_3sdp"
+            android:text="Recommendation"
+            android:textSize="@dimen/_16ssp" />
+
+        <ImageView
+            android:id="@+id/filterBtn"
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:src="@drawable/filter"/>
+
+    </Toolbar>
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:padding="@dimen/_4sdp"
+        android:textColor="@color/gray1"
+        android:text="Number of items: "
+        android:textSize="@dimen/_11ssp"/>
+
+    <TextView
+        android:id="@+id/totalItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/text1"
+        android:layout_below="@id/toolbar"
+        android:padding="@dimen/_4sdp"
+        android:textColor="@color/gray1"
+        android:text="12 "
+        android:textSize="@dimen/_11ssp"/>
+
+    <TextView
+        android:id="@+id/mapListing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_alignParentRight="true"
+        android:padding="@dimen/_4sdp"
+        android:textColor="@color/gray1"
+        android:text="Map "
+        android:textSize="@dimen/_11ssp"
+        android:drawableLeft="@drawable/location_icon"
+        android:drawablePadding="@dimen/_4sdp"/>
+
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/recyclerView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_below="@id/text1"-->
+<!--        android:padding="@dimen/_5sdp"/>-->
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_1"
+        android:layout_below="@+id/mapListing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:elevation="@dimen/_8sdp"
+        app:cardCornerRadius="@dimen/_15sdp">
+
+
+        <RelativeLayout
+            android:id="@+id/houseCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:padding="@dimen/_10sdp">
+            <ImageView
+                android:id="@+id/housePic"
+                android:layout_width="@dimen/_65sdp"
+                android:layout_height="@dimen/_65sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/house_pic"
+                android:layout_alignParentLeft="true"/>
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@id/housePic"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="Rs 9000"
+                android:textSize="@dimen/_6sdp"
+                android:textColor="@color/white"
+                android:background="@color/colorPrimary"
+                android:padding="@dimen/_3sdp"/>
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:text="3.5 "
+                android:drawableRight="@drawable/white_star"
+                android:textSize="@dimen/_6sdp"
+                android:textColor="@color/white"
+                android:background="@drawable/green_box"
+                android:padding="@dimen/_3sdp"/>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/housePic"
+                android:layout_below="@id/price"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:text="1 Room Available"
+                android:textStyle="bold"
+                android:textSize="@dimen/_10sdp"/>
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/housePic"
+                android:layout_below="@id/description"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:textColor="@color/gray1"
+                android:text="Mahalaxmi, Lalitpur"
+                android:textSize="@dimen/_8sdp"/>
+
+
+            <TextView
+                android:id="@+id/distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/housePic"
+                android:layout_below="@id/location"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:textColor="@color/gray2"
+                android:drawableLeft="@drawable/location_icon"
+                android:text=" 3.2 Km from Noida"
+                android:textSize="@dimen/_6sdp"/>
+
+            <TextView
+                android:id="@+id/preference"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/location"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:drawableLeft="@drawable/blue_circle"
+                android:text=" Unisex"
+                android:textColor="@color/gray2"
+                android:textSize="@dimen/_6sdp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_2"
+            android:layout_below="@+id/cardView_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:elevation="@dimen/_8sdp"
+            app:cardCornerRadius="@dimen/_15sdp">
+
+
+            <RelativeLayout
+                android:id="@+id/houseCard_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:padding="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/housePic_1"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_65sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/house_pic"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/price_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@id/housePic_1"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:text="Rs 9000"
+                    android:textSize="@dimen/_6sdp"
+                    android:textColor="@color/white"
+                    android:background="@color/colorPrimary"
+                    android:padding="@dimen/_3sdp"/>
+                <TextView
+                    android:id="@+id/rating_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:text="3.5 "
+                    android:drawableRight="@drawable/white_star"
+                    android:textSize="@dimen/_6sdp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/green_box"
+                    android:padding="@dimen/_3sdp"/>
+
+                <TextView
+                    android:id="@+id/description_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/housePic_1"
+                    android:layout_below="@id/price_1"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:textColor="@color/black"
+                    android:text="1 Room Available"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/location_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/housePic_1"
+                    android:layout_below="@id/description_1"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:textColor="@color/gray1"
+                    android:text="Mahalaxmi, Lalitpur"
+                    android:textSize="@dimen/_8sdp"/>
+
+
+                <TextView
+                    android:id="@+id/distance_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/housePic_1"
+                    android:layout_below="@id/location_1"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:textColor="@color/gray2"
+                    android:drawableLeft="@drawable/location_icon"
+                    android:text=" 3.2 Km from Noida"
+                    android:textSize="@dimen/_6sdp"/>
+
+                <TextView
+                    android:id="@+id/preference_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/location_1"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:drawableLeft="@drawable/blue_circle"
+                    android:text=" Unisex"
+                    android:textColor="@color/gray2"
+                    android:textSize="@dimen/_6sdp" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView_3"
+            android:layout_below="@+id/cardview_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:elevation="@dimen/_8sdp"
+            app:cardCornerRadius="@dimen/_15sdp">
+
+
+            <RelativeLayout
+                android:id="@+id/houseCard_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:padding="@dimen/_10sdp">
+                <ImageView
+                    android:id="@+id/housePic_2"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_65sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/house_pic"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/price_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@id/housePic_2"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:text="Rs 9000"
+                    android:textSize="@dimen/_6sdp"
+                    android:textColor="@color/white"
+                    android:background="@color/colorPrimary"
+                    android:padding="@dimen/_3sdp"/>
+                <TextView
+                    android:id="@+id/rating_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:text="3.5 "
+                    android:drawableRight="@drawable/white_star"
+                    android:textSize="@dimen/_6sdp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/green_box"
+                    android:padding="@dimen/_3sdp"/>
+
+                <TextView
+                    android:id="@+id/description_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/housePic_2"
+                    android:layout_below="@id/price_2"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:textColor="@color/black"
+                    android:text="1 Room Available"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/location_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/housePic_2"
+                    android:layout_below="@id/description_2"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:textColor="@color/gray1"
+                    android:text="Mahalaxmi, Lalitpur"
+                    android:textSize="@dimen/_8sdp"/>
+
+
+                <TextView
+                    android:id="@+id/distance_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/housePic_2"
+                    android:layout_below="@id/location_2"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:textColor="@color/gray2"
+                    android:drawableLeft="@drawable/location_icon"
+                    android:text=" 3.2 Km from Noida"
+                    android:textSize="@dimen/_6sdp"/>
+
+                <TextView
+                    android:id="@+id/preference_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/location_2"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:drawableLeft="@drawable/blue_circle"
+                    android:text=" Unisex"
+                    android:textColor="@color/gray2"
+                    android:textSize="@dimen/_6sdp" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView_4"
+            android:layout_below="@+id/cardView_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:elevation="@dimen/_8sdp"
+            app:cardCornerRadius="@dimen/_15sdp">
+
+
+            <RelativeLayout
+                android:id="@+id/houseCard_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:padding="@dimen/_10sdp">
+                <ImageView
+                    android:id="@+id/housePic_3"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_65sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/house_pic"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/price_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@id/housePic_3"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:text="Rs 9000"
+                    android:textSize="@dimen/_6sdp"
+                    android:textColor="@color/white"
+                    android:background="@color/colorPrimary"
+                    android:padding="@dimen/_3sdp"/>
+                <TextView
+                    android:id="@+id/rating_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:text="3.5 "
+                    android:drawableRight="@drawable/white_star"
+                    android:textSize="@dimen/_6sdp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/green_box"
+                    android:padding="@dimen/_3sdp"/>
+
+                <TextView
+                    android:id="@+id/description_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/housePic_3"
+                    android:layout_below="@id/price_3"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:textColor="@color/black"
+                    android:text="1 Room Available"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/location_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/housePic_3"
+                    android:layout_below="@id/description_3"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:textColor="@color/gray1"
+                    android:text="Mahalaxmi, Lalitpur"
+                    android:textSize="@dimen/_8sdp"/>
+
+
+                <TextView
+                    android:id="@+id/distance_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/housePic_3"
+                    android:layout_below="@id/location_3"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:textColor="@color/gray2"
+                    android:drawableLeft="@drawable/location_icon"
+                    android:text=" 3.2 Km from Noida"
+                    android:textSize="@dimen/_6sdp"/>
+
+                <TextView
+                    android:id="@+id/preference_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/location_3"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:drawableLeft="@drawable/blue_circle"
+                    android:text=" Unisex"
+                    android:textColor="@color/gray2"
+                    android:textSize="@dimen/_6sdp" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView_5"
+            android:layout_below="@+id/cardView_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:elevation="@dimen/_8sdp"
+            app:cardCornerRadius="@dimen/_15sdp">
+
+
+            <RelativeLayout
+                android:id="@+id/houseCard_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:padding="@dimen/_10sdp">
+                <ImageView
+                    android:id="@+id/housePic_4"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_65sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/house_pic"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/price_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@id/housePic_4"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:text="Rs 9000"
+                    android:textSize="@dimen/_6sdp"
+                    android:textColor="@color/white"
+                    android:background="@color/colorPrimary"
+                    android:padding="@dimen/_3sdp"/>
+                <TextView
+                    android:id="@+id/rating_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:text="3.5 "
+                    android:drawableRight="@drawable/white_star"
+                    android:textSize="@dimen/_6sdp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/green_box"
+                    android:padding="@dimen/_3sdp"/>
+
+                <TextView
+                    android:id="@+id/description_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/housePic_4"
+                    android:layout_below="@id/price_4"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:textColor="@color/black"
+                    android:text="1 Room Available"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/location_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/housePic_4"
+                    android:layout_below="@id/description_4"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:textColor="@color/gray1"
+                    android:text="Mahalaxmi, Lalitpur"
+                    android:textSize="@dimen/_8sdp"/>
+
+
+                <TextView
+                    android:id="@+id/distance_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/housePic_4"
+                    android:layout_below="@id/location_4"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:textColor="@color/gray2"
+                    android:drawableLeft="@drawable/location_icon"
+                    android:text=" 3.2 Km from Noida"
+                    android:textSize="@dimen/_6sdp"/>
+
+                <TextView
+                    android:id="@+id/preference_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/location_4"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:drawableLeft="@drawable/blue_circle"
+                    android:text=" Unisex"
+                    android:textColor="@color/gray2"
+                    android:textSize="@dimen/_6sdp" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_below="@+id/cardView_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:elevation="@dimen/_8sdp"
+            app:cardCornerRadius="@dimen/_15sdp">
+
+
+            <RelativeLayout
+                android:id="@+id/houseCard_5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:padding="@dimen/_10sdp">
+                <ImageView
+                    android:id="@+id/housePic_5"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_65sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/house_pic"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/price_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@id/housePic_5"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:text="Rs 9000"
+                    android:textSize="@dimen/_6sdp"
+                    android:textColor="@color/white"
+                    android:background="@color/colorPrimary"
+                    android:padding="@dimen/_3sdp"/>
+                <TextView
+                    android:id="@+id/rating_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:text="3.5 "
+                    android:drawableRight="@drawable/white_star"
+                    android:textSize="@dimen/_6sdp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/green_box"
+                    android:padding="@dimen/_3sdp"/>
+
+                <TextView
+                    android:id="@+id/description_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/housePic_5"
+                    android:layout_below="@id/price_5"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:textColor="@color/black"
+                    android:text="1 Room Available"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/location_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/housePic_5"
+                    android:layout_below="@id/description_5"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:textColor="@color/gray1"
+                    android:text="Mahalaxmi, Lalitpur"
+                    android:textSize="@dimen/_8sdp"/>
+
+
+                <TextView
+                    android:id="@+id/distance_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/housePic_5"
+                    android:layout_below="@id/location_5"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:textColor="@color/gray2"
+                    android:drawableLeft="@drawable/location_icon"
+                    android:text=" 3.2 Km from Noida"
+                    android:textSize="@dimen/_6sdp"/>
+
+                <TextView
+                    android:id="@+id/preference_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/location_5"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:drawableLeft="@drawable/blue_circle"
+                    android:text=" Unisex"
+                    android:textColor="@color/gray2"
+                    android:textSize="@dimen/_6sdp" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+</ScrollView>
